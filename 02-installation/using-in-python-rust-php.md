@@ -270,8 +270,6 @@ jobs:
 css:
 	fscss src/styles.fscss dist/styles.css
 
-watch:
-	fscss --watch src/styles.fscss dist/styles.css
 ```
 
 ## Summary
