@@ -11,7 +11,7 @@ The runtime script auto-scans your page and processes FSCSS styles:
 <html>
 <head>
   <link type="fscss" href="style.fscss">
-  <script src="https://cdn.jsdelivr.net/npm/fscss@1.2.0/runtime.min.js" async></script>
+  <script src="https://cdn.jsdelivr.net/npm/fscss@1.2.1/runtime.min.js" async></script>
 </head>
 <body>
   <h1 class="title">Hello FSCSS</h1>
@@ -33,7 +33,7 @@ You can also write FSCSS directly in a `<style>` tag:
 <!DOCTYPE html>
 <html>
 <head>
-  <style type="text/fscss">
+  <style>
     $primary: #2563eb;
 
     .title {
@@ -64,7 +64,7 @@ For module-based projects, use the ESM build:
 
 ```html
 <script type="module">
-  import xfscss from "https://cdn.jsdelivr.net/npm/fscss@1.2.0/esm.js";
+  import xfscss from "https://cdn.jsdelivr.net/npm/fscss@1.2.1/esm.js";
 
   // Process FSCSS when ready
   xfscss.reboot();
@@ -75,7 +75,7 @@ For module-based projects, use the ESM build:
 
 | Version | URL | Description |
 |---------|-----|-------------|
-| Latest | `fscss@1.2.0` | Recommended for production |
+| Latest | `fscss@1.2.1` | Recommended for production |
 | Specific | `fscss@1.1.20` | Use for compatibility |
 
 ## Advantages of CDN
@@ -98,7 +98,7 @@ For module-based projects, use the ESM build:
 <!DOCTYPE html>
 <html>
 <head>
-  <style type="text/fscss">
+  <style>
     $primary: #2563eb;
     $gray: #64748b;
     $radius: 8px;
