@@ -22,19 +22,10 @@ fscss src/styles.fscss dist/styles.css
 |--------|-------------|---------|
 | `input` | Source `.fscss` file | `src/styles.fscss` |
 | `output` | Destination `.css` file | `dist/styles.css` |
-| `--watch` | Watch for changes | `fscss --watch src.fscss dist.css` |
-| `--version` | Show version | `fscss --version` |
-| `--help` | Show help | `fscss --help` |
+| `--watch` | Watch for changes | use FSCSS vscode extention|
+| `npm view fscss version` | Show version | `npm view fscss version` |
 
-## Watch Mode
 
-Watch a file for changes and recompile automatically:
-
-```bash
-fscss --watch src/styles.fscss dist/styles.css
-```
-
-Press `Ctrl+C` to stop watching.
 
 ## Compiling Multiple Files
 
@@ -90,7 +81,6 @@ Add these scripts to your `package.json`:
 {
   "scripts": {
     "build:css": "fscss src/styles/main.fscss dist/styles/main.css",
-    "watch:css": "fscss --watch src/styles/main.fscss dist/styles/main.css",
     "build:all": "npm run build:css"
   }
 }
@@ -102,9 +92,6 @@ Add these scripts to your `package.json`:
 # Build CSS once
 npm run build:css
 
-# Watch for changes
-npm run watch:css
-
 # Build all files
 npm run build:all
 ```
@@ -115,9 +102,9 @@ FSCSS supports imports. If your main file imports others:
 
 ```fscss
 /* main.fscss */
-@import 'variables';
-@import 'components';
-@import 'layout';
+@import(exec(variables.fscss));
+@import(exec(components.fscss));
+@import(exec(layout.fscss));
 ```
 
 Compile the main file:
@@ -140,26 +127,6 @@ Error: Unexpected token at line 15
 ```
 
 Fix the error and run the command again.
-
-## Useful Commands
-
-### Check Version
-
-```bash
-fscss --version
-```
-
-### Show Help
-
-```bash
-fscss --help
-```
-
-### Get File Info
-
-```bash
-fscss --info
-```
 
 ## Integration with Build Tools
 
@@ -186,7 +153,6 @@ For most projects, npm scripts are sufficient:
 ```json
 {
   "scripts": {
-    "dev": "fscss --watch src/styles.fscss dist/styles.css",
     "build": "fscss src/styles.fscss dist/styles.css"
   }
 }
