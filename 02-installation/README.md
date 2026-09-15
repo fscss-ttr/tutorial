@@ -30,7 +30,7 @@ npm install fscss@latest
 Or use the CDN for instant access:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/fscss@1.2.0/runtime.min.js" async></script>
+<script src="https://cdn.jsdelivr.net/npm/fscss@1.2.1/runtime.min.js" async></script>
 ```
 
 ## Verify Installation
@@ -38,7 +38,7 @@ Or use the CDN for instant access:
 After installing, verify FSCSS is working:
 
 ```bash
-fscss --version
+npm view fscss version
 ```
 
 You should see the version number printed to your terminal.
@@ -57,5 +57,3 @@ You should see the version number printed to your terminal.
 **Next: [npm Setup](./npm-setup.md)**
 
 ---
-
-*Written by [Omonire](https://github.com/Omonire)*
