@@ -66,3 +66,7 @@ Congratulations! You've written your first FSCSS code.
 ---
 
 **Start: [Variables](./variables.md)**
+
+---
+
+*Written by [Omonire](https://github.com/Omonire)*

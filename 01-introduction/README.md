@@ -29,3 +29,7 @@ This introduction is for:
 ---
 
 **Next: [What is FSCSS?](./what-is-fscss.md)**
+
+---
+
+*Written by [Omonire](https://github.com/Omonire)*

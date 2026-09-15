@@ -31,3 +31,7 @@ Before starting this section, make sure you have:
 ---
 
 **Start: [FSCSS Internals](./fscss-internals.md)**
+
+---
+
+*Written by [Omonire](https://github.com/Omonire)*

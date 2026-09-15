@@ -55,3 +55,7 @@ You should see the version number printed to your terminal.
 ---
 
 **Next: [npm Setup](./npm-setup.md)**
+
+---
+
+*Written by [Omonire](https://github.com/Omonire)*

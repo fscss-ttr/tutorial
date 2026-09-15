@@ -44,3 +44,7 @@ Before starting this section, make sure you have:
 ---
 
 **Start: [Creating Plugins](./creating-plugins.md)**
+
+---
+
+*Written by [Omonire](https://github.com/Omonire)*

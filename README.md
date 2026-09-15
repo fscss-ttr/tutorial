@@ -96,3 +96,7 @@ MIT License. Built with care for the web development community.
 ---
 
 **Ready to start? Begin with the [Introduction](./01-introduction/).**
+
+---
+
+*Written by [Omonire](https://github.com/Omonire)*

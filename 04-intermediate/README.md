@@ -40,3 +40,7 @@ Before starting this section, make sure you have:
 ---
 
 **Start: [@define Blocks](./@define-blocks.md)**
+
+---
+
+*Written by [Omonire](https://github.com/Omonire)*
