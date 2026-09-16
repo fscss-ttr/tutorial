@@ -15,30 +15,22 @@ Here's a quick example:
 **Plain CSS:**
 ```css
 .button {
-  background-color: #2563eb;
-  color: #ffffff;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  width: 150px;
+  height: 150px;
+  min-height: 150px;
+  min-width: 150px;
 }
 ```
 
 **FSCSS:**
 ```fscss
-$primary: #2563eb;
 
 .button {
-  background: $primary;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  %4(width, height, min-height, min-width [: 150px;])
 }
 ```
 
-The FSCSS version uses a **variable** (`$primary`) so you can reuse that color everywhere without typing it again. But FSCSS goes much further than just variables.
+FSCSS goes much further than just variables.
 
 ## Core Features
 
@@ -71,7 +63,7 @@ Group related properties together and apply them with one line:
 }
 
 .card {
-  @fun.card;
+  @fun.card
   border: 1px solid #e2e8f0;
 }
 ```
@@ -89,11 +81,11 @@ Create parameterized style definitions:
 }
 
 .btn-primary {
-  @button(#2563eb, white);
+  @button(#2563eb, white)
 }
 
 .btn-danger {
-  @button(#dc2626, white);
+  @button(#dc2626, white)
 }
 ```
 
@@ -103,7 +95,7 @@ Automatically add vendor prefixes:
 
 ```fscss
 .div {
-  -*transform: rotate(45deg);
+  -*-transform: rotate(45deg);
 }
 ```
 
@@ -123,11 +115,15 @@ Compiles to:
 Repeat patterns without repeating code:
 
 ```fscss
-@for $i from 1 to 5 {
-  .mt-#{$i} {
-    margin-top: $i * 0.25rem;
+@import((mirror) from fscss:micros)
+
+@arr colors[red, blue, green]
+@mirror(colors, ind)
+
+  .mt-@arr.ind[]{
+    margin-top: num(@arr.ind[] * 0.25)rem;
+    background: @arr.colors[@arr.ind[]];
   }
-}
 ```
 
 ## How FSCSS Works
