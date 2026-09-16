@@ -37,9 +37,9 @@ Creating a reusable component library? Style stores and @define blocks make it e
   transition: all 0.2s ease;
 }
 
-.btn-primary { @button(primary, #2563eb, white); }
-.btn-secondary { @button(secondary, #64748b, white); }
-.btn-outline { @button(outline, transparent, #2563eb); }
+.btn-primary { @button(primary, #2563eb, white) }
+.btn-secondary { @button(secondary, #64748b, white) }
+.btn-outline { @button(outline, transparent, #2563eb) }
 ```
 
 ### 3. Blog and Portfolio Sites
@@ -77,7 +77,6 @@ FSCSS is simpler than other preprocessors. It's a great stepping stone:
 FSCSS's lightweight nature makes it perfect for projects that don't need a full framework:
 
 ```fscss
-/* Entire stylesheet in 20 lines */
 $primary: #2563eb;
 $gray: #64748b;
 
@@ -104,60 +103,14 @@ Need to build a quick mockup? FSCSS's shorthand speeds up the process:
   padding: 1.5rem;
 }
 
-.page { @fun(flex-center); min-height: 100vh; }
-.modal { @fun(card); max-width: 400px; }
+.page { @fun.flex-center min-height: 100vh; }
+.modal { @fun.card max-width: 400px; }
 ```
 
-## FSCSS Might Not Be For You If...
-
-### 1. You Need a Full Framework
-
-If you want pre-built components, grids, and utilities out of the box, look at established frameworks like Bootstrap or Foundation.
-
-FSCSS is a **preprocessor**, not a framework. You build your own components.
-
-### 2. You're Already Deep in Another Preprocessor
-
-If your team already uses Sass/SCSS and has established patterns, switching to FSCSS might not be worth the migration cost.
-
-### 3. You Need Advanced Features
-
-FSCSS is lightweight by design. If you need:
-
-- Advanced conditionals with complex logic
-- Function libraries
-- Extensive plugin ecosystems
-
-Other preprocessors might be better choices.
-
-### 4. You're Building a Very Large Enterprise App
-
-Large teams with complex build pipelines might prefer more established tools with enterprise support.
-
-## Quick Decision Guide
-
-| Scenario | Recommendation |
-|----------|----------------|
-| Building a custom website | Use FSCSS |
-| Creating a design system | Use FSCSS |
-| Learning preprocessors | Use FSCSS |
-| Rapid prototyping | Use FSCSS |
-| Need pre-built components | Consider Bootstrap or Foundation |
-| Already using another preprocessor | Stay with what works |
-| Enterprise app with big team | Consider established tools |
-
-## The Sweet Spot
-
-FSCSS hits the sweet spot for developers who want:
-
-- **More power than plain CSS** — Variables, stores, loops
-- **Less complexity than other preprocessors** — Simpler syntax, fewer concepts
-- **More control than frameworks** — Your own class names, your own patterns
-- **Faster development** — Shorthand that speeds up typing
 
 ## Summary
 
-Use FSCSS when you want to write CSS faster without the overhead of a full framework. It's perfect for custom designs, design systems, learning preprocessors, and small-to-medium projects. For large enterprise apps or when you need pre-built components, consider other tools.
+Use FSCSS when you want to write CSS faster without the overhead of a full framework. It's perfect for custom designs, design systems, learning preprocessors.
 
 The best way to know if FSCSS is for you? Try it. Build something small and see how it feels.
 
