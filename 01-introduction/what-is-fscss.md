@@ -23,7 +23,7 @@ Here's a quick example:
 ```
 
 **FSCSS:**
-```fscss
+```css
 
 .button {
   %4(width, height, min-height, min-width [: 150px;])
@@ -38,7 +38,7 @@ FSCSS goes much further than just variables.
 
 Store values once, use them everywhere:
 
-```fscss
+```css
 $primary: #2563eb;
 $spacing: 1rem;
 $radius: 8px;
@@ -54,7 +54,7 @@ $radius: 8px;
 
 Group related properties together and apply them with one line:
 
-```fscss
+```css
 @fun(card) {
   background: white;
   border-radius: 8px;
@@ -72,7 +72,7 @@ Group related properties together and apply them with one line:
 
 Create parameterized style definitions:
 
-```fscss
+```css
 @define button(bg, color) {
   background: @use(bg);
   color: @use(color);
@@ -93,7 +93,7 @@ Create parameterized style definitions:
 
 Automatically add vendor prefixes:
 
-```fscss
+```css
 .div {
   -*-transform: rotate(45deg);
 }
@@ -114,7 +114,7 @@ Compiles to:
 
 Repeat patterns without repeating code:
 
-```fscss
+```css
 @import((mirror) from fscss:micros)
 
 @arr colors[red, blue, green]
