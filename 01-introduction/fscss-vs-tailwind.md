@@ -88,9 +88,9 @@ Your HTML becomes a wall of utility classes with no meaningful structure. Try ex
   padding: 1.5rem;
 }
 
-.user-card { @card(0 4px 6px rgba(0,0,0,0.1), 8px); }
-.blog-card { @card(0 2px 4px rgba(0,0,0,0.05), 12px); }
-.product-card { @card(0 10px 25px rgba(0,0,0,0.15), 16px); }
+.user-card { @card(0 4px 6px #121212, 8px) }
+.blog-card { @card(0 2px 4px #999888, 12px) }
+.product-card { @card(0 10px 10px #345434, 16px) }
 ```
 
 ## Comparison Table
@@ -130,7 +130,7 @@ Shorthand syntax means fewer keystrokes:
 
 ```fscss
 /* FSCSS shorthand */
--*transform: rotate(45deg);
+-*-transform: rotate(45deg);
 
 /* Compiles to standard CSS */
 -webkit-transform: rotate(45deg);
@@ -164,18 +164,10 @@ $radius: 8px;
   padding: 1.5rem;
 }
 
-.product-card { @fun.card; }
-.blog-card { @fun.card; }
+.product-card { @fun.card }
+.blog-card { @fun.card }
 ```
 
-### 4. Loops for DRY Code
-
-```fscss
-@for $i from 1 to 6 {
-  .p-#{$i} { padding: $i * 0.25rem; }
-  .m-#{$i} { margin: $i * 0.25rem; }
-}
-```
 
 ## Summary
 
