@@ -52,38 +52,37 @@ Your HTML becomes a wall of utility classes with no meaningful structure. Try ex
 
 ### Styles in Your Stylesheet
 
-```fscss
+```css
 .user-card {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: white;
-  border-radius: 8px;
+  ai: center;
+  jc: space-between;
+  bg: white;
+  rounded: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 1rem;
   margin-bottom: 1.5rem;
 }
 
 .user-avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
+  size: 48px;
+  rounded: 50%;
   object-fit: cover;
 }
 
 .user-name {
-  font-size: 1.125rem;
-  font-weight: 600;
+  fs: 1.125rem;
+  fw: 600;
   color: #111827;
 }
 ```
 
 ### Reusable Components with @define
 
-```fscss
+```css
 @define card(shadow, radius) {
-  background: white;
-  border-radius: @use(radius);
+  bg: white;
+  rounded: @use(radius);
   box-shadow: @use(shadow);
   padding: 1.5rem;
 }
@@ -142,24 +141,24 @@ transform: rotate(45deg);
 
 ### 2. Variables That Actually Work
 
-```fscss
+```css
 $primary: #2563eb;
 $spacing: 1rem;
 $radius: 8px;
 
 .button {
-  background: $primary;
+  bg: $primary;
   padding: $spacing;
-  border-radius: $radius;
+  rounded: $radius;
 }
 ```
 
 ### 3. Style Stores for Patterns
 
-```fscss
+```css
 @fun(card) {
-  background: white;
-  border-radius: 8px;
+  bg: white;
+  rounded: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
 }
