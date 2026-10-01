@@ -11,7 +11,7 @@ The runtime script auto-scans your page and processes FSCSS styles:
 <html>
 <head>
   <link type="fscss" href="style.fscss">
-  <script src="https://cdn.jsdelivr.net/npm/fscss@1.2.1/runtime.min.js" async></script>
+  <script src="https://cdn.jsdelivr.net/npm/fscss@1.2.5/runtime.min.js" async></script>
 </head>
 <body>
   <h1 class="title">Hello FSCSS</h1>
@@ -38,8 +38,8 @@ You can also write FSCSS directly in a `<style>` tag:
 
     .title {
       color: $primary;
-      font-size: 2rem;
-      font-weight: 700;
+      fs: 2rem;
+      fw: 700;
     }
 
     .container {
@@ -48,7 +48,7 @@ You can also write FSCSS directly in a `<style>` tag:
       padding: 2rem;
     }
   </style>
-  <script src="https://cdn.jsdelivr.net/npm/fscss@1.2.0/runtime.min.js" async></script>
+  <script src="https://cdn.jsdelivr.net/npm/fscss@1.2.5/runtime.min.js" async></script>
 </head>
 <body>
   <div class="container">
@@ -64,7 +64,7 @@ For module-based projects, use the ESM build:
 
 ```html
 <script type="module">
-  import xfscss from "https://cdn.jsdelivr.net/npm/fscss@1.2.1/esm.js";
+  import xfscss from "https://cdn.jsdelivr.net/npm/fscss@1.2.5/esm.js";
 
   // Process FSCSS when ready
   xfscss.reboot();
@@ -104,16 +104,16 @@ For module-based projects, use the ESM build:
     $radius: 8px;
 
     @fun(card) {
-      background: white;
-      border-radius: $radius;
+      bg: white;
+      rounded: $radius;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       padding: 1.5rem;
       margin-bottom: 1rem;
     }
 
     body {
-      font-family: system-ui, sans-serif;
-      background: #f1f5f9;
+      ff: system-ui, sans-serif;
+      bg: #f1f5f9;
       color: #334155;
       margin: 0;
       padding: 2rem;
@@ -122,17 +122,17 @@ For module-based projects, use the ESM build:
     .card { @fun.card; }
 
     .btn {
-      background: $primary;
+      bg: $primary;
       color: white;
       padding: 0.75rem 1.5rem;
-      border-radius: $radius;
+      rounded: $radius;
       border: none;
       cursor: pointer;
     }
 
     .text-gray { color: $gray; }
   </style>
-  <script src="https://cdn.jsdelivr.net/npm/fscss@1.2.0/runtime.min.js" async></script>
+  <script src="https://cdn.jsdelivr.net/npm/fscss@1.2.5/runtime.min.js" async></script>
 </head>
 <body>
   <div class="card">
