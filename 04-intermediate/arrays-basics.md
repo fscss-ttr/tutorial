@@ -59,7 +59,9 @@ Referencing an array without an index outputs all items as a comma-separated str
 @arr(fonts[Inter, system-ui, sans-serif])
 
 body {
-  font-family: @arr.fonts;
+
+  /* font-family: @arr.fonts; will compile to font-family: [Inter, system-ui, sans-serif]; so use !.list instead */
+font-family: @arr.fonts!.list;
 }
 ```
 
