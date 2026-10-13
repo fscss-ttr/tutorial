@@ -5,15 +5,15 @@ Arrays are how FSCSS does data. Declare a list once and index into it, iterate i
 ## Declaring
 
 ```fscss
-@arr(colors[#3b82f6, #8b5cf6, #06b6d4, #10b981]);
-@arr(spacing[0.5rem, 1rem, 1.5rem, 2rem]);
+@arr(colors[#3b82f6, #8b5cf6, #06b6d4, #10b981])
+@arr(spacing[0.5rem, 1rem, 1.5rem, 2rem])
 ```
 
 The parentheses are optional; both of these are valid:
 
 ```fscss
 @arr names[red, green, blue]
-@arr names[red, green, blue];
+@arr names[red, green, blue]
 ```
 
 Items are comma-separated. Whitespace is trimmed.
@@ -23,8 +23,8 @@ Items are comma-separated. Whitespace is trimmed.
 Items are read by position, **starting at 1**:
 
 ```fscss
-@arr(colors[#3b82f6, #8b5cf6, #06b6d4, #10b981]);
-@arr(spacing[0.5rem, 1rem, 1.5rem, 2rem]);
+@arr(colors[#3b82f6, #8b5cf6, #06b6d4, #10b981])
+@arr(spacing[0.5rem, 1rem, 1.5rem, 2rem])
 
 .primary-button {
   background: @arr.colors[1];
