@@ -45,7 +45,7 @@ A good default is the value you would have typed anyway. Compare:
 ```fscss
 /* Annoying — every call repeats the obvious */
 @define card(bg, radius, pad, shadow) { /* ... */ }
-.card { @card(white, 8px, 1.5rem, 0 4px 6px rgba(0,0,0,.1)) }
+.card { @card(white, 8px, 1.5rem, 0 4px 6px #121212DD) }
 
 /* Better — the common case is free */
 @define card(bg: white, radius: 8px, pad: 1.5rem, shadow: 0 4px 6px rgba(0,0,0,.1)) { /* ... */ }
