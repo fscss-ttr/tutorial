@@ -1,4 +1,4 @@
-# 07 — Projects
+# 07 — Projects: 50 FSCSS Project Tutorials
 
 Put it all together.
 

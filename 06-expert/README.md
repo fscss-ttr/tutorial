@@ -1,4 +1,4 @@
-# 06 — Expert
+# 06 — Expert FSCSS Tutorial
 
 Composition and performance.
 

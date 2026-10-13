@@ -1,6 +1,6 @@
-# Installation
+# FSCSS Installation Guide
 
-Get FSCSS up and running in minutes. Choose the method that works best for your workflow.
+Get the **FSCSS CSS preprocessor** up and running in minutes — via npm, CDN, or the CLI. Choose the method that works best for your workflow.
 
 ## Installation Methods
 

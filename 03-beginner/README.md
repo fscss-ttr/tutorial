@@ -1,4 +1,4 @@
-# 03 — Beginner
+# 03 — Beginner FSCSS Tutorial
 
 Core syntax only. No modules yet.
 

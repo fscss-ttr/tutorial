@@ -1,4 +1,6 @@
-# Introduction to FSCSS
+# Introduction to FSCSS (Figured Shorthand CSS)
+
+A beginner-friendly introduction to the **FSCSS CSS preprocessor** — what it is, why it exists, and when to use it.
 
 Welcome to the first section of the FSCSS tutorial. Here, you'll learn what FSCSS is, why it was created, and how it can transform your CSS workflow.
 

@@ -1,4 +1,4 @@
-# 05 — Advanced
+# 05 — Advanced FSCSS Tutorial
 
 Logic and dynamic values.
 

@@ -1,4 +1,4 @@
-# 04 — Intermediate
+# 04 — Intermediate FSCSS Tutorial
 
 Reuse and structure.
 
