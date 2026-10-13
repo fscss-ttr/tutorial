@@ -40,13 +40,13 @@ Write `@fun.name` where you want the declarations injected:
 
 ```fscss
 @fun(box){
-  a: 100px;
-  b: 200px;
+  width: 100px;
+  height: 200px;
 }
 
 .size-card {
-  width: @fun.box.a;
-  height: @fun.box.b;
+  @fun.box.width
+  @fun.box.height
 }
 ```
 
