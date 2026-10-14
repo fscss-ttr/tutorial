@@ -3,7 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/fscss.svg?color=2563eb&label=npm)](https://www.npmjs.com/package/fscss)
 [![npm downloads](https://img.shields.io/npm/dm/fscss.svg?color=2563eb)](https://www.npmjs.com/package/fscss)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/fscss-ttr/FSCSS)
-[![GitHub stars](https://img.shields.io/github/stars/fscss-ttr/tutorial.svg?color=2563eb)](https://github.com/fscss-ttr/tutorial)
+[![GitHub stars](https://img.shields.io/github/stars/fscss-ttr/FSCSS.svg?color=2563eb)](https://github.com/fscss-ttr/tutorial)
 [![docs](https://img.shields.io/badge/docs-fscss.devtem.org-2563eb.svg)](https://fscss.devtem.org/)
 
 ![FSCSS Tutorial — learn the FSCSS CSS preprocessor](./assets/banner.svg)
