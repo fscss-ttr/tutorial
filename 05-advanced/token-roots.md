@@ -7,7 +7,7 @@ The `*-root` pattern is a small convention with big payoff: define a block that 
 ```fscss
 @define siri-tokens(root: root) {
   `
-  @use(root) {
+  :@use(root) {
     --siri-wave-container-bg: #000;
     --siri-wave-container-radius: 28px;
     --siri-wave-line-bg: rgba(255,255,255,0.18);
@@ -26,16 +26,16 @@ The `*-root` pattern is a small convention with big payoff: define a block that 
 }
 ```
 
-The parameter is a *scope* — default `root`, but it can be any selector. Call `@siri-tokens(.card)` and the same tokens land inside `.card` instead. One define, many scopes.
+The parameter is a *scope* — default `root`, but it can be any selector. Call `@siri-tokens(root.dark-theme)` and the same tokens land inside `.card` instead. One define, many scopes.
 
 ## Why Scope as a Parameter
 
 Naming the scope as a parameter makes the define reusable:
 
 ```fscss
-@define theme-tokens(root: :root) {
+@define theme-tokens(root: root) {
   `
-  @use(root) {
+  :@use(root) {
     --bg: #f8fafc;
     --text: #0f172a;
     --accent: #2563eb;
@@ -44,8 +44,8 @@ Naming the scope as a parameter makes the define reusable:
 }
 
 @theme-tokens()                 /* writes to :root        */
-@theme-tokens(.dark-card)       /* scoped copy for one     */
-@theme-tokens([data-theme="x"]) /* scoped by attribute     */
+@theme-tokens(root.dark-card)       /* scoped copy for one     */
+@theme-tokens(root[data-theme="x"]) /* scoped by attribute     */
 ```
 
 Same tokens, scoped by call site. The name `*-root` just says "this is my tokens-to-a-root define".
