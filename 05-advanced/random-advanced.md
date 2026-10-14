@@ -65,7 +65,7 @@ So random is a *build-time* strategy with the CLI but a *live* strategy in the b
 
 ```fscss
 @arr(cards[1, 2, 3, 4])
-@arr(deck[cards!.shuffle])
+@arr(deck[@arr.cards!.shuffle])
 
 .card { content: "@arr.deck!.list"; }
 ```
