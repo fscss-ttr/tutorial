@@ -398,3 +398,5 @@ Mirror structure of mature modules (st-core, overlapui) for consistency across [
 6. **npm `style` + `main`** pointing at CSS and source  
 
 Build small, prefix tokens, document markup, and ship CSS the browser already understands.
+
+**Next: [Grid Layouts](./grid-layouts.md)**
