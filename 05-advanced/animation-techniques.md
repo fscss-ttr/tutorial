@@ -96,18 +96,6 @@ Reduce-it users get control through the same tokens:
 
 (`both`/`backwards` fills keep entrance animations safe even when shortened.)
 
-## Generated Keyframe Names
-
-Array-generated animations need distinct names — generate them:
-
-```fscss
-@arr(kind[pop, slide, fade])
-@arr(i[count(3, 1)])
-
-$(@keyframes entr-@arr.kind[@arr.i[]], .entr-@arr.kind[@arr.i[]], &[400ms ease-out both]) {
-  0%   { opacity: 0; transform: scale(0.9); }
-  100% { opacity: 1; transform: scale(1); }
-}
 ```
 
 One template, three entrance animations.
