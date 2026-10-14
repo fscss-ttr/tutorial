@@ -50,8 +50,8 @@ Unless the module is tiny, prefer named imports: they keep your compiled output 
 Local files use the same syntax. The path points at your source:
 
 ```fscss
-@import((theme) from ./styles/_theme.fscss)
-@import((grid) from ./styles/_grid.fscss)
+@import((theme) from "./styles/_theme.fscss")
+@import((grid) from "./styles/_grid.fscss")
 ```
 
 ## `exec()` Imports
