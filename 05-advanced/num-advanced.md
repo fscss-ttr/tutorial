@@ -22,7 +22,7 @@ $cols: 12;
 $gap: 24;
 
 .col-4 {
-  width: num(<($cols! - 4) / $cols! * 100>)%;
+  width: num(< <$cols! - 4> / $cols! * 100>)%;
 }
 ```
 
