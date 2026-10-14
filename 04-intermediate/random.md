@@ -31,7 +31,7 @@ The random pick slots into any value:
 Pass an array instead of an inline list:
 
 ```fscss
-@arr(palette[#4361ee, #f72585, #7209b7]);
+@arr palette[#4361ee, #f72585, #7209b7]
 
 .btn {
   border: 2px groove @random(@arr.palette);
@@ -58,7 +58,7 @@ If you want several values to be *related* — the same index across arrays — 
 Random is most useful inside constrained ranges:
 
 ```fscss
-@arr(spots[0, 12, 24, 36, 48])
+@arr spots[0, 12, 24, 36, 48]
 
 .foil {
   background-position: @random(@arr.spots)px @random(@arr.spots)px;
