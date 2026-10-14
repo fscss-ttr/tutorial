@@ -89,10 +89,10 @@ These only make sense on numeric arrays:
 Generate class names or wrapped tokens:
 
 ```fscss
-@arr(names[primary, danger, success])
+@arr names[primary, danger, success]
 
 .btn-classes { content: "@arr.names!.prefix(btn-)"; } /* btn-primary, btn-danger, btn-success */
-.wrapped     { content: "@arr.names!.surround((,))"; } /* (primary), (danger), (success) */
+.wrapped     { content: "@arr.names!.surround(:,;)"; } /* :primary;, :danger;, :success; */
 ```
 
 ## Mutation
@@ -100,10 +100,10 @@ Generate class names or wrapped tokens:
 Add to or remove from an array with indexed operators:
 
 ```fscss
-@arr(names[a, b])
+@arr names[a, b]
 
-@arr(names!+[c, d])  /* append: a, b, c, d */
-@arr(names!-[1])     /* remove the first item: b, c, d */
+@arr.names!+[c, d]  /* append: a, b, c, d */
+@arr.names!-[1]    /* remove the first item: b, c, d */
 ```
 
 This is useful for building an array up in steps, though most code declares arrays in one shot.
