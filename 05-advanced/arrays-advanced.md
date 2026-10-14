@@ -7,15 +7,15 @@ Most `@arr` usage is read-only: declare, index, check length. Advanced work is *
 ```fscss
 @arr(plan[a, b])
 
-@arr(plan!+[c])       /* a, b, c */
-@arr(plan!+[d, e])    /* a, b, c, d, e */
+@arr.plan!+[c]       /* a, b, c */
+@arr.plan!+[d, e]    /* a, b, c, d, e */
 ```
 
 Appending is how you compose the item list from multiple sources:
 
 ```fscss
-@arr(icons[home, user])
-@arr(icons!+[settings, bell, profile])
+@arr icons[home, user]
+@arr.icons!+[settings, bell, profile]
 ```
 
 ## Remove (`!-`)
@@ -23,16 +23,16 @@ Appending is how you compose the item list from multiple sources:
 Index-based removal, 1-based:
 
 ```fscss
-@arr(names[a, b, c, d])
+@arr names[a, b, c, d]
 
-@arr(names!-[2])   /* remove second item → a, c, d */
-@arr(names!-[1])   /* remove first → c, d */
+@arr.names!-[2]   /* remove second item → a, c, d */
+@arr.names!-[1]   /* remove first → c, d */
 ```
 
 ## Sort and Unique on Real Data
 
 ```fscss
-@arr(tags[beta, alpha, beta, gamma, alpha])
+@arr tags[beta, alpha, beta, gamma, alpha]
 
 .sorted { content: "@arr.tags!.sort"; }   /* alpha, alpha, beta, beta, gamma */
 .unique { content: "@arr.tags!.unique"; } /* alpha, beta, alpha, gamma */
@@ -43,7 +43,7 @@ Sort then unique beats unique then sort for stable lists.
 ## Shuffle and Reverse
 
 ```fscss
-@arr(deck[ace, king, queen, jack])
+@arr deck[ace, king, queen, jack]
 
 .one { content: "@arr.deck!.shuffle"; }  /* random order per compile */
 .two { content: "@arr.deck!.reverse"; }  /* jack, queen, king, ace */
@@ -87,7 +87,7 @@ Generate class or value lists in one step:
 ## Numeric Summaries
 
 ```fscss
-@arr(sizes[8, 16, 24, 32])
+@arr sizes[8, 16, 24, 32]
 
 .metrics {
   count: @arr.sizes!.length;   /* 4 */
@@ -111,9 +111,9 @@ Because methods never chain, rebuild through a fresh array:
 ```fscss
 @arr(raw[c, a, b])
 
-@arr(clean[raw])
-@arr(clean!+[d])
-@arr(clean!-[2])
+@arr.clean[raw]
+@arr.clean!+[d]
+@arr.clean!-[2]
 ```
 
 `clean` is now `c, b, d` — an independent list you own.
@@ -123,9 +123,9 @@ Because methods never chain, rebuild through a fresh array:
 ```fscss
 @arr(tags[react, css, fscss, react, dev, css])
 
-@arr(tags-final[tags])
-@arr(tags-final!.unique)
-@arr(tags-final!.sort)
+@arr tags-final[@arr.tags!.list]
+@arr.tags-final!.unique
+@arr.tags-final!.sort
 
 .cloud {
   content: "Tags: " @arr.tags-final!.list;
