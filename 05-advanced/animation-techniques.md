@@ -96,9 +96,6 @@ Reduce-it users get control through the same tokens:
 
 (`both`/`backwards` fills keep entrance animations safe even when shortened.)
 
-```
-
-One template, three entrance animations.
 
 ## Discipline
 
