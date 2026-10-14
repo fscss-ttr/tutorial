@@ -69,7 +69,7 @@ Sometimes you want the *same* module under two names — e.g. a base theme plus 
 
 ## Checklist When Something Breaks
 
-1. Did the module actually export that name? (Check `@define`/`@fun`/`str` labels.)
+1. Did the module actually define that name? (Check `@define` labels.)
 2. Is the alias unique across all imports?
 3. For remotes: is the URL reachable and CORS-friendly?
 
