@@ -53,7 +53,7 @@ That won't do it — but a define that reports its argument will:
 
 ```fscss
 @define report(tag) {
-  exec(_log, 'loading' @use(tag))
+  exec(_log, 'loading @use(tag)')
 }
 
 html { @report(theme-dark) }
@@ -63,7 +63,7 @@ When you're hunting a stale variable, `exec(_warn, 'using old token $brand!')` b
 
 ## `inline()` — Strip Braces and Format
 
-`inline(\`...\`)` takes a block of CSS, removes curly brackets, and flattens it:
+`inline("...")` takes a block of CSS, removes curly brackets, and flattens it:
 
 ```fscss
 inline(`
@@ -78,12 +78,12 @@ Becomes the inside of a rule:
 
 ```text
 :root { inline(`
-        :root{ ... }`)
+        :root{ ... }`) }
 ```
 
 Output:
 
-```scss
+```css
 --primary-color: midnightblue;
 --main-bg: orange;
 ```
@@ -93,12 +93,12 @@ It's a compact way to embed structured blocks produced elsewhere, for instance i
 ```fscss
 @define tokens() {
   `
-  inline(`
+  inline("
     :root {
       --primary-color: midnightblue;
       --main-bg: orange;
     }
-  `)
+")
   `
 }
 ```
@@ -116,7 +116,7 @@ Neither is for production output — they're your eyes inside the compiler.
 ## Summary
 
 - `exec(_log, msg)` / `exec(_warn, msg)` print at compile time and emit no CSS.
-- `inline(\`...\`)` strips braces and flattens a CSS block.
+- `inline('...')` strips braces and flattens a CSS block.
 - Use them to trace build order, catch stale variables, and embed structured tokens.
 
 ---
