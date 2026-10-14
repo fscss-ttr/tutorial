@@ -82,26 +82,6 @@ Desktop-first (desktop default, `max-width` removes features):
 
 Mobile-first is the default recommendation: simpler cascade, less to undo.
 
-## Generated Breakpoint Helpers
-
-Loop breakpoints into utilities:
-
-```fscss
-@arr(bp[sm, md, lg])
-@arr(px[480, 768, 1024])
-@arr(i[count(3, 1)])
-
-@media (min-width: @arr.px[@arr.i[]]px) {
-  .show-@arr.bp[@arr.i[]] { display: block; }
-}
-```
-
-```css
-@media (min-width: 480px)  { .show-sm { display: block; } }
-@media (min-width: 768px)  { .show-md { display: block; } }
-@media (min-width: 1024px) { .show-lg { display: block; } }
-```
-
 ## Container Queries, Tokenizably
 
 Container queries respond to the container, not the viewport. FSCSS has no special syntax — write them normally in a block define:
