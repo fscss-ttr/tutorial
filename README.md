@@ -5,6 +5,7 @@
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/fscss-ttr/FSCSS)
 [![GitHub stars](https://img.shields.io/github/stars/fscss-ttr/FSCSS.svg?color=2563eb)](https://github.com/fscss-ttr/tutorial)
 [![docs](https://img.shields.io/badge/docs-fscss.devtem.org-2563eb.svg)](https://fscss.devtem.org/)
+[![IDE Status](https://img.shields.io/badge/IDE-Passed-brightgreen)](https://fscss.devtem.org/ide)
 
 ![FSCSS Tutorial — learn the FSCSS CSS preprocessor](./assets/banner.svg)
 
