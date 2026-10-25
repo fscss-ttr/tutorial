@@ -13,7 +13,7 @@ Time to put the four beginner concepts together. We'll build a small profile car
 
 Create `style.fscss`:
 
-```fscss
+```css
 /* 1. Tokens */
 $primary: #2563eb;
 $ink: #0f172a;
@@ -41,14 +41,14 @@ str(avatar-skin, "
 
 @define card(bg: white, radius: 16px, pad: 1.75rem) {
   background: @use(bg);
-  border-radius: @use(radius);
+  rounded: @use(radius);
   padding: @use(pad);
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
 }
 
 /* 3. Page */
 body {
-  background: $bg!;
+  bg: $bg!;
   color: $ink!;
   font-family: system-ui, sans-serif;
   min-height: 100vh;
@@ -66,9 +66,8 @@ body {
 
 .avatar {
   avatar-skin
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
+  size: 80px;
+  rounded: 50%;
   margin: 0 auto 1rem;
   display: flex;
   align-items: center;
@@ -120,7 +119,7 @@ Create `index.html` next to it:
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Profile — FSCSS</title>
   <link type="text/fscss" href="style.fscss">
-  <script src="https://cdn.jsdelivr.net/npm/fscss@1.2.5/runtime.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/fscss@1.2.6/runtime.min.js" defer></script>
 </head>
 <body>
   <article class="profile">
