@@ -8,13 +8,13 @@ FSCSS isn't the right tool for every project. Here's when it shines — and when
 
 Building a unique website with custom designs? FSCSS gives you the flexibility to create exactly what you want:
 
-```fscss
+```css
 $brand: #2563eb;
 $dark: #0f172a;
 
 .hero {
-  background: linear-gradient(135deg, $dark, $brand);
-  min-height: 100vh;
+  bg: linear-gradient(135deg, $dark, $brand);
+  min-h: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,12 +25,12 @@ $dark: #0f172a;
 
 Creating a reusable component library? Style stores and @define blocks make it easy:
 
-```fscss
+```css
 @define button(variant, bg, text) {
-  background: @use(bg);
+  bg: @use(bg);
   color: @use(text);
   padding: 12px 24px;
-  border-radius: 8px;
+  rounded: 8px;
   font-weight: 600;
   border: none;
   cursor: pointer;
@@ -46,20 +46,20 @@ Creating a reusable component library? Style stores and @define blocks make it e
 
 Simple, clean projects benefit from FSCSS's straightforward syntax:
 
-```fscss
+```css
 $font-serif: 'Georgia', serif;
 $font-sans: 'Inter', sans-serif;
 
 body {
-  font-family: $font-sans;
+  ff: $font-sans;
   line-height: 1.6;
   color: #334155;
 }
 
 article {
-  font-family: $font-serif;
-  max-width: 720px;
-  margin: 0 auto;
+  ff: $font-serif;
+  max-w: 720px;
+  m: 0 auto;
 }
 ```
 
@@ -76,12 +76,12 @@ FSCSS is simpler than other preprocessors. It's a great stepping stone:
 
 FSCSS's lightweight nature makes it perfect for projects that don't need a full framework:
 
-```fscss
+```css
 $primary: #2563eb;
 $gray: #64748b;
 
-.container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
-.btn { background: $primary; color: white; padding: 8px 16px; border-radius: 4px; }
+.container { max-w: 1200px; margin: 0 auto; padding: 0 1rem; }
+.btn { bg: $primary; color: white; padding: 8px 16px; rounded: 4px; }
 .text-gray { color: $gray; }
 ```
 
@@ -89,7 +89,7 @@ $gray: #64748b;
 
 Need to build a quick mockup? FSCSS's shorthand speeds up the process:
 
-```fscss
+```css
 @fun(flex-center) {
   display: flex;
   align-items: center;
