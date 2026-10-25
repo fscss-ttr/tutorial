@@ -102,9 +102,9 @@ FSCSS supports imports. If your main file imports others:
 
 ```fscss
 /* main.fscss */
-@import(exec(variables.fscss));
-@import(exec(components.fscss));
-@import(exec(layout.fscss));
+@import((*) from "variables.fscss");
+@import((*) from "components.fscss");
+@import((*) from "layout.fscss");
 ```
 
 Compile the main file:
