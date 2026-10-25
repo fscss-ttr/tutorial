@@ -4,7 +4,7 @@ So far every `@define` produced declarations *inside* a rule. But FSCSS can also
 
 ## The Syntax
 
-```fscss
+```css
 @define mobile(size) {
   `
   @media (max-width: @use(size)) {
@@ -34,7 +34,7 @@ Compiles to:
 
 A breakpoint helper is the classic block define:
 
-```fscss
+```css
 @define upto(breakpoint) {
   `
   @media (max-width: @use(breakpoint)) {
@@ -46,7 +46,7 @@ A breakpoint helper is the classic block define:
 
 In practice you'll write a define per breakpoint, or pass the whole body in from the call site using a selector parameter (shown below):
 
-```fscss
+```css
 @define tablet() {
   `
   @media (min-width: 768px) {
@@ -62,7 +62,7 @@ In practice you'll write a define per breakpoint, or pass the whole body in from
 
 ## Generating Keyframes
 
-```fscss
+```css
 @define spin(duration: 1s) {
   `
   @keyframes spin {
@@ -84,14 +84,14 @@ One call, both the `@keyframes` and the rule that uses it.
 
 A block define can take a selector as a parameter and scope its output to it:
 
-```fscss
+```css
 @define siri-wave(st: .siri-wave) {
   `
   @use(st) {
     position: relative;
-    overflow: hidden;
-    border-radius: 24px;
-    background: #000;
+    ov: hidden;
+    rounded: 24px;
+    bg: #000;
   }
   `
 }
@@ -101,7 +101,7 @@ A block define can take a selector as a parameter and scope its output to it:
 
 `@use(st) { ... }` emits a rule whose selector is the parameter. Add `*` for a universal descendant:
 
-```fscss
+```css
 @define reset-all(st: .siri-wave) {
   `
   @use(st), @use(st) * {
@@ -117,7 +117,7 @@ Compiles to `.siri-wave, .siri-wave * { ... }`.
 
 ## A Real Example: Responsive Container
 
-```fscss
+```css
 @define container() {
   `
   .container {
@@ -152,7 +152,7 @@ If your define both sets properties on the caller *and* emits top-level rules, s
 
 Block defines are called like any other define, as a statement:
 
-```fscss
+```css
 @tablet()
 @spin(2s)
 @container()
