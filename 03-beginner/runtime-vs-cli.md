@@ -13,7 +13,7 @@ Drop one script tag on the page and FSCSS compiles itself.
 <html>
 <head>
   <link type="text/fscss" href="style.fscss">
-  <script src="https://cdn.jsdelivr.net/npm/fscss@1.2.5/runtime.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/fscss@1.2.6/runtime.min.js" defer></script>
 </head>
 <body>
   <h1 class="title">Hello FSCSS</h1>
@@ -28,7 +28,7 @@ The `type="text/fscss"` link is not a normal stylesheet; FSCSS intercepts it, co
 You can also write FSCSS straight into a normal `<style>` block. In that case do **not** use `type="text/fscss"` — a plain `<style>` is correct:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/fscss@1.2.5/runtime.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/fscss@1.2.6/runtime.min.js" defer></script>
 <style>
   $primary: #2563eb;
 
@@ -50,7 +50,7 @@ You can also write FSCSS straight into a normal `<style>` block. In that case do
 
 ```html
 <script type="module">
-  import xfscss from "https://cdn.jsdelivr.net/npm/fscss@1.2.5/esm.js";
+  import xfscss from "https://cdn.jsdelivr.net/npm/fscss@1.2.6/esm.js";
   xfscss.reboot(); // compile on demand
 </script>
 ```
@@ -107,7 +107,7 @@ Prototype with the runtime; ship with the CLI.
 ```fscss
 /* style.fscss — start here, run in the browser */
 $brand: #7c3aed;
-.hero { background: $brand!; }
+.hero { bg: $brand!; }
 ```
 
 When the design settles:
