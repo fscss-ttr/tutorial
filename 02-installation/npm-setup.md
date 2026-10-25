@@ -39,8 +39,7 @@ Or add a script to your `package.json`:
 ```json
 {
   "scripts": {
-    "build:css": "fscss src/styles.fscss dist/styles.css",
-    "watch:css": "fscss --watch src/styles.fscss dist/styles.css"
+    "build:css": "fscss src/styles.fscss dist/styles.css"
   }
 }
 ```
