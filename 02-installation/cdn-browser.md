@@ -2,6 +2,15 @@
 
 Use FSCSS directly in your browser without any build tools. Perfect for quick testing and learning.
 
+## Browser IDE
+
+- [IDE](https://fscss.devtem.org/ide)
+
+- [IDE Guide](https://fscss.devtem.org/ide-guide)
+
+- [xfcmd guide](https://fscss.devtem.org/xfcmds-guide) 
+
+
 ## Runtime Script
 
 The runtime script auto-scans your page and processes FSCSS styles:
@@ -11,7 +20,7 @@ The runtime script auto-scans your page and processes FSCSS styles:
 <html>
 <head>
   <link type="fscss" href="style.fscss">
-  <script src="https://cdn.jsdelivr.net/npm/fscss@1.2.5/runtime.min.js" async></script>
+  <script src="https://cdn.jsdelivr.net/npm/fscss@1.2.6/runtime.min.js" async></script>
 </head>
 <body>
   <h1 class="title">Hello FSCSS</h1>
@@ -43,12 +52,12 @@ You can also write FSCSS directly in a `<style>` tag:
     }
 
     .container {
-      max-width: 1200px;
+      max-w: 1200px;
       margin: 0 auto;
       padding: 2rem;
     }
   </style>
-  <script src="https://cdn.jsdelivr.net/npm/fscss@1.2.5/runtime.min.js" async></script>
+  <script src="https://cdn.jsdelivr.net/npm/fscss@1.2.6/runtime.min.js" async></script>
 </head>
 <body>
   <div class="container">
@@ -64,7 +73,7 @@ For module-based projects, use the ESM build:
 
 ```html
 <script type="module">
-  import xfscss from "https://cdn.jsdelivr.net/npm/fscss@1.2.5/esm.js";
+  import xfscss from "https://cdn.jsdelivr.net/npm/fscss@1.2.6/esm.js";
 
   // Process FSCSS when ready
   xfscss.reboot();
@@ -75,8 +84,8 @@ For module-based projects, use the ESM build:
 
 | Version | URL | Description |
 |---------|-----|-------------|
-| Latest | `fscss@1.2.1` | Recommended for production |
-| Specific | `fscss@1.1.20` | Use for compatibility |
+| Latest | `fscss@1.2.6` | Recommended for production |
+| Specific | `fscss@1.1.25` | Use for compatibility |
 
 ## Advantages of CDN
 
@@ -132,7 +141,7 @@ For module-based projects, use the ESM build:
 
     .text-gray { color: $gray; }
   </style>
-  <script src="https://cdn.jsdelivr.net/npm/fscss@1.2.5/runtime.min.js" async></script>
+  <script src="https://cdn.jsdelivr.net/npm/fscss@1.2.6/runtime.min.js" async></script>
 </head>
 <body>
   <div class="card">
