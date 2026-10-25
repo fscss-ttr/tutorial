@@ -42,18 +42,18 @@ Compiles to:
 
 `%2` is the most common:
 
-```fscss
+```css
 .avatar {
   %2(width, height[: 64px;])
   border-radius: 50%;
 }
 ```
+From 1.2.5 there's shorthand properties for those 
 
 ```css
 .avatar {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
+  size: 64px;
+  rounded: 50%;
 }
 ```
 
