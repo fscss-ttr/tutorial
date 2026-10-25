@@ -4,7 +4,7 @@
 
 ## Declaring a Store
 
-```fscss
+```css
 @fun(card-style){
   background: white;
   border-radius: 8px;
@@ -17,7 +17,7 @@
 
 Write `@fun.name` where you want the declarations injected:
 
-```fscss
+```css
 .card {
   @fun.card-style
   border: 1px solid #e2e8f0;
@@ -38,7 +38,7 @@ Write `@fun.name` where you want the declarations injected:
 
 `@fun.name.property` injects one declaration:
 
-```fscss
+```css
 @fun(box){
   width: 100px;
   height: 200px;
@@ -54,14 +54,14 @@ Write `@fun.name` where you want the declarations injected:
 
 Add `.value` to get only the value, which is what you need inside a larger value like `linear-gradient(...)` or `var(...)`:
 
-```fscss
+```css
 @fun(col){
   1: #550066;
   2: #005523;
 }
 
 .box {
-  background: linear-gradient(@fun.col.1.value, @fun.col.2.value);
+  bg: linear-gradient(@fun.col.1.value, @fun.col.2.value);
 }
 ```
 
@@ -85,7 +85,7 @@ Memorise these three and `@fun` becomes a second nature.
 
 This is the intended use. Put your palette in a store, then publish it as CSS custom properties:
 
-```fscss
+```css
 @fun(palette){
   magenta: #ff2ecb;
   cyan:    #22d3ee;
@@ -103,7 +103,7 @@ Now every color has three lives: one source of truth (the store), a runtime toke
 
 ## A Spacing Scale
 
-```fscss
+```css
 @fun(space){
   sm: 0.5rem;
   md: 1rem;
@@ -135,7 +135,7 @@ Use `str()` for a quick one-off block, `@fun` for named data, and `@define` when
 
 ## A Full Example
 
-```fscss
+```css
 @fun(brand){
   primary: #2563eb;
   ink:     #0f172a;
