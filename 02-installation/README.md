@@ -30,7 +30,7 @@ npm install fscss@latest
 Or use the CDN for instant access:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/fscss@1.2.1/runtime.min.js" async></script>
+<script src="https://cdn.jsdelivr.net/npm/fscss@1.2.6/runtime.min.js" async></script>
 ```
 
 ## Verify Installation
