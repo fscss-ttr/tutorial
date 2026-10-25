@@ -93,7 +93,7 @@ fscss style.fscss style.css
 Prefer no build step? Load the runtime from a CDN instead:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/fscss@1.2.1/runtime.min.js" async></script>
+<script src="https://cdn.jsdelivr.net/npm/fscss@1.2.6/runtime.min.js" async></script>
 ```
 
 ## Who Is This Tutorial For?
