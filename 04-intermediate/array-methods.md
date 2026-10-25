@@ -2,7 +2,7 @@
 
 Arrays would be plain lists without their methods. Append `!` to an array reference to switch into **method access mode**, then call a method by name.
 
-```fscss
+```css
 @arr.name        /* direct output: the items */
 @arr.name!.length /* method access mode */
 ```
@@ -32,8 +32,8 @@ Arrays would be plain lists without their methods. Append `!` to an array refere
 
 ## Inspection
 
-```fscss
-@arr(colors[red, green, blue])
+```css
+@arr colors[red, green, blue]
 
 .debug-count  { content: "@arr.colors!.length"; }  /* 3 */
 .debug-first  { content: "@arr.colors!.first"; }   /* red */
@@ -43,8 +43,8 @@ Arrays would be plain lists without their methods. Append `!` to an array refere
 
 ## Transformations
 
-```fscss
-@arr(colors[#3b82f6, #8b5cf6, #06b6d4])
+```css
+@arr colors[#3b82f6, #8b5cf6, #06b6d4]
 
 h1 { background: linear-gradient(@arr.colors!.reverse); }
 h2 { color: @arr.colors!.join( | ); }
@@ -52,8 +52,8 @@ h2 { color: @arr.colors!.join( | ); }
 
 `.sort` and `.unique` clean up data:
 
-```fscss
-@arr(tags[beta, alpha, beta, gamma])
+```css
+@arr tags[beta, alpha, beta, gamma]
 .sorted  { content: "@arr.tags!.sort"; }    /* alpha, beta, gamma */
 .unique  { content: "@arr.tags!.unique"; }  /* beta, alpha, gamma */
 ```
@@ -62,8 +62,8 @@ h2 { color: @arr.colors!.join( | ); }
 
 `.indices` gives you the 1-based positions, and `.segment` wraps each item in brackets:
 
-```fscss
-@arr(cols[a, b, c])
+```css
+@arr cols[a, b, c]
 
 .content { content: "@arr.cols!.indices"; }  /* 1,2,3 */
 .attrs   { content: "@arr.cols!.segment"; }  /* [a], [b], [c] */
@@ -75,8 +75,8 @@ h2 { color: @arr.colors!.join( | ); }
 
 These only make sense on numeric arrays:
 
-```fscss
-@arr(sizes[8, 16, 24, 32])
+```css
+@arr sizes[8, 16, 24, 32]
 
 .total { content: "@arr.sizes!.sum"; }  /* 80 */
 .small { content: "@arr.sizes!.min"; }  /* 8 */
@@ -88,7 +88,7 @@ These only make sense on numeric arrays:
 
 Generate class names or wrapped tokens:
 
-```fscss
+```css
 @arr names[primary, danger, success]
 
 .btn-classes { content: "@arr.names!.prefix(btn-)"; } /* btn-primary, btn-danger, btn-success */
@@ -99,7 +99,7 @@ Generate class names or wrapped tokens:
 
 Add to or remove from an array with indexed operators:
 
-```fscss
+```css
 @arr names[a, b]
 
 @arr.names!+[c, d]  /* append: a, b, c, d */
@@ -112,8 +112,8 @@ This is useful for building an array up in steps, though most code declares arra
 
 `.randint` is a one-item shuffle; `@random(@arr.n)` picks at compile time too (next-next lesson):
 
-```fscss
-@arr(palette[#4361ee, #f72585, #7209b7])
+```css
+arr palette[#4361ee, #f72585, #7209b7]
 
 .card {
   border: 2px groove @arr.palette!.randint;
@@ -124,7 +124,7 @@ This is useful for building an array up in steps, though most code declares arra
 
 Methods return **strings**, not arrays. So this is invalid:
 
-```fscss
+```css
 @arr.colors!.reverse!.first   /* does NOT chain */
 ```
 
