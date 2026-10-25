@@ -4,9 +4,9 @@
 
 ## Inline List
 
-```fscss
+```css
 .btn {
-  background: @random([red, blue, green, brown]);
+  bg: @random([red, blue, green, brown]);
 }
 ```
 
@@ -16,7 +16,7 @@ Each compile (or render) selects a different color — so you can build the same
 
 The random pick slots into any value:
 
-```fscss
+```css
 .deck {
   transform: translate(@random([10, 30, 60])px);
 }
@@ -30,7 +30,7 @@ The random pick slots into any value:
 
 Pass an array instead of an inline list:
 
-```fscss
+```css
 @arr palette[#4361ee, #f72585, #7209b7]
 
 .btn {
@@ -44,9 +44,9 @@ The whole array is the candidate pool; `@random` draws from it.
 
 Each `@random()` call draws **independently**. Two calls in one rule are two different picks:
 
-```fscss
+```css
 .gem {
-  background: @random([#ff6b6b, #feca57, #48dbfb]);
+  bg: @random([#ff6b6b, #feca57, #48dbfb]);
   color: @random([#ffffff, #111111]);
 }
 ```
@@ -57,7 +57,7 @@ If you want several values to be *related* — the same index across arrays — 
 
 Random is most useful inside constrained ranges:
 
-```fscss
+```css
 @arr spots[0, 12, 24, 36, 48]
 
 .foil {
