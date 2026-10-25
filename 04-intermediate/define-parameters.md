@@ -4,7 +4,7 @@ You met `@define` in the beginner section. Now let's use it properly: multiple p
 
 ## The Contract
 
-```fscss
+```css
 @define name(param1, param2: default) {
   property: @use(param1);
   property: @use(param2);
@@ -20,7 +20,7 @@ Everything else is style.
 
 ## Multiple Parameters
 
-```fscss
+```css
 @define button(bg, color, pad: 12px 24px, radius: 8px) {
   background: @use(bg);
   color: @use(color);
@@ -31,7 +31,7 @@ Everything else is style.
 }
 ```
 
-```fscss
+```css
 .btn-primary { @button(#2563eb, white) }
 .btn-ghost   { @button(transparent, #2563eb, 8px 16px) }
 ```
@@ -42,7 +42,7 @@ Required parameters come first; anything optional gets a default and comes after
 
 A good default is the value you would have typed anyway. Compare:
 
-```fscss
+```css
 /* Annoying — every call repeats the obvious */
 @define card(bg, radius, pad, shadow) { /* ... */ }
 .card { @card(white, 8px, 1.5rem, 0 4px 6px #121212DD) }
@@ -57,7 +57,7 @@ A good default is the value you would have typed anyway. Compare:
 
 Parameters are just text. They can appear inside values, selectors, even other `@define` calls:
 
-```fscss
+```css
 @define spacing(prop, size) {
   @use(prop): @use(size);
 }
@@ -65,7 +65,7 @@ Parameters are just text. They can appear inside values, selectors, even other `
 
 Wait — you cannot use a parameter as a property name in a property define. Property names are literal. Parameters belong in *values*:
 
-```fscss
+```css
 @define inset(amount) {
   top: @use(amount);
   right: @use(amount);
@@ -85,7 +85,7 @@ If you need the property name to vary, that is a signal to use a block define (n
 
 The real power move is building components from focused, single-purpose defines:
 
-```fscss
+```css
 @define flex-center() {
   display: flex;
   align-items: center;
@@ -116,7 +116,7 @@ Each define does one thing. Compose at the call site. This is how maintainable F
 
 Defines can read global `$` variables, which lets a theme flow through every component:
 
-```fscss
+```css
 $brand: #7c3aed;
 $brand-ink: white;
 
@@ -137,7 +137,7 @@ Change `$brand` once and every `@primary-button()` call follows.
 
 A define body may call another define:
 
-```fscss
+```css
 @define btn-base() {
   padding: 0.75rem 1.5rem;
   border: none;
@@ -167,7 +167,7 @@ A define body may call another define:
 
 ## Pitfalls
 
-```fscss
+```css
 /* Forgot @use — prints the name literally */
 @define bad(bg) { background: bg; }
 
