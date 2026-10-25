@@ -4,7 +4,7 @@ A stylesheet grows until it needs splitting. `@import` loads styles from a built
 
 ## The Core Shape
 
-```fscss
+```css
 /* Import one named module */
 @import((module) from lib-or-path)
 
@@ -24,14 +24,14 @@ A stylesheet grows until it needs splitting. `@import` loads styles from a built
 
 **Selective** — pull exactly what you use:
 
-```fscss
+```css
 @import((buttons) from ui-kit)
 @import((theme-tokens) from ui-kit)
 ```
 
 **Wildcard** — pull the whole module:
 
-```fscss
+```css
 @import((*) from ui-kit)
 ```
 
@@ -49,7 +49,7 @@ Unless the module is tiny, prefer named imports: they keep your compiled output 
 
 Local files use the same syntax. The path points at your source:
 
-```fscss
+```css
 @import((theme) from "./styles/_theme.fscss")
 @import((grid) from "./styles/_grid.fscss")
 ```
@@ -58,7 +58,7 @@ Local files use the same syntax. The path points at your source:
 
 `exec()` runs the target and merges its output. This is the classic way to split theme and layout files:
 
-```fscss
+```css
 @import(exec(_theme.fscss))
 @import(exec(_layout.fscss))
 
@@ -77,7 +77,7 @@ Local files use the same syntax. The path points at your source:
 
 For `@import((buttons) from ui-kit)` to work, `ui-kit` must export something called `buttons`. A module exports its defines and stores:
 
-```fscss
+```css
 /* ui-kit/_buttons.fscss */
 @define buttons() {
   `
@@ -91,7 +91,7 @@ For `@import((buttons) from ui-kit)` to work, `ui-kit` must export something cal
 
 Import selectively, then call:
 
-```fscss
+```css
 @import((buttons) from ui-kit)
 
 @buttons()
@@ -99,11 +99,11 @@ Import selectively, then call:
 
 ## A Practical Layout
 
-```fscss
+```css
 /* main.fscss — the only file you compile */
-@import(exec(_theme.fscss))    /* tokens and bases  */
-@import(exec(_layout.fscss))   /* container, grid   */
-@import(exec(_components.fscss)) /* cards, buttons   */
+@import((*) from "_theme.fscss")    /* tokens and bases  */
+@import((*) from "_layout.fscss")   /* container, grid   */
+@import((*) from "_components.fscss") /* cards, buttons   */
 ```
 
 One entry point, clean separation, single compiled output.
