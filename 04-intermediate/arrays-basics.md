@@ -4,14 +4,14 @@ Arrays are how FSCSS does data. Declare a list once and index into it, iterate i
 
 ## Declaring
 
-```fscss
-@arr(colors[#3b82f6, #8b5cf6, #06b6d4, #10b981])
-@arr(spacing[0.5rem, 1rem, 1.5rem, 2rem])
+```css
+@arr colors[#3b82f6, #8b5cf6, #06b6d4, #10b981]
+@arr spacing[0.5rem, 1rem, 1.5rem, 2rem]
 ```
 
 The parentheses are optional; both of these are valid:
 
-```fscss
+```css
 @arr names[red, green, blue]
 @arr names[red, green, blue]
 ```
@@ -22,12 +22,12 @@ Items are comma-separated. Whitespace is trimmed.
 
 Items are read by position, **starting at 1**:
 
-```fscss
-@arr(colors[#3b82f6, #8b5cf6, #06b6d4, #10b981])
-@arr(spacing[0.5rem, 1rem, 1.5rem, 2rem])
+```css
+@arr colors[#3b82f6, #8b5cf6, #06b6d4, #10b981]
+@arr spacing[0.5rem, 1rem, 1.5rem, 2rem]
 
 .primary-button {
-  background: @arr.colors[1];
+  bg: @arr.colors[1];
   padding: @arr.spacing[2] @arr.spacing[3];
 }
 ```
@@ -45,23 +45,23 @@ Items are read by position, **starting at 1**:
 
 An array item can be a name, a number, a color, or a whole value:
 
-```fscss
-@arr(icons[home, user, settings, bell])
-@arr(sizes[1rem, 1.25rem, 1.5rem])
-@arr(shadows[0 1px 2px rgba(0,0,0,.1), 0 4px 6px rgba(0,0,0,.15)])
+```css
+@arr icons[home, user, settings, bell]
+@arr sizes[1rem, 1.25rem, 1.5rem]
+@arr shadows[0 1px 2px rgba(0,0,0,.1), 0 4px 6px rgba(0,0,0,.15)]
 ```
 
 ## Direct Output
 
 Referencing an array without an index outputs all items as a comma-separated string:
 
-```fscss
-@arr(fonts[Inter, system-ui, sans-serif])
+```css
+@arr fonts[Inter, system-ui, sans-serif]
 
 body {
 
   /* font-family: @arr.fonts; will compile to font-family: [Inter, system-ui, sans-serif]; so use !.list instead */
-font-family: @arr.fonts!.list;
+ff: @arr.fonts!.list;
 }
 ```
 
@@ -77,7 +77,7 @@ That is handy for font stacks and transition lists.
 
 The empty brackets form `@arr.name[]` walks *every* item. Used in a selector, it generates one rule per item:
 
-```fscss
+```css
 @arr(delays[0.1s, 0.3s, 0.5s])
 
 .loading-dot:nth-child(@arr.delays[]) {
