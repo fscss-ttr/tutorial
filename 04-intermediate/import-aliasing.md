@@ -60,7 +60,7 @@ After importing you **must call** the mixins:
 
 ### Practical examples
 
-**Form module (from previous conversation):**
+**Form module:**
 ```css
 @import((*) from form)
 
