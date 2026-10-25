@@ -78,7 +78,7 @@ Write a stylesheet:
 $primary: #2563eb;
 
 .btn {
-  background: $primary;
+  bg: $primary;
   color: white;
   padding: 12px 24px;
 }
