@@ -1,85 +1,114 @@
-# Import Aliasing
+**FSCSS `@import`** is the modular import system for bringing in `@define` mixins (and whole libraries) from other `.fscss` files or the registry.
 
-When two modules export the same name — two themes, two button kits — you have a collision. FSCSS solves it with aliases, and it also lets you bundle several imports into one statement.
+### Core mental model
 
-## Renaming a Module with `as`
+1. **Registration** — A module file uses `@define` to register blueprints (no CSS is emitted yet).
+2. **Extraction** — `@import` pulls the named defines into *this* file’s scope.
+3. **Substitution** — You call the mixin (`@name(...)`) → it expands to real CSS.
 
-```fscss
-@import((theme as light-theme) from vendor-themes)
-@import((theme as dark-theme) from vendor-themes)
-```
-
-Now call them unambiguously:
-
-```fscss
-.light-ui { @light-theme() }
-.dark-ui  { @dark-theme() }
-```
-
-Aliasing keeps both, avoids the clash, and reads far better than `theme-variant-2`.
-
-## Multiple Modules in One Statement
-
-Group related imports in a single `from`:
-
-```fscss
-@import((
-  buttons,
-  cards,
-  badges as chips
-) from ui-kit)
-```
-
-Three modules, one import line, one name change (`badges` → `chips`).
-
-## Remote Imports
-
-Pull a module from a URL instead of a registry name:
-
-```fscss
-@import((tokens) from "https://cdn.example.com/packages/tokens.fscss")
-```
-
-Remote imports work exactly like local ones — selective, aliased, or wildcard:
-
-```fscss
-@import((*) from "https://cdn.example.com/packages/ui.fscss")
-```
-
-Use remotes sparingly: every remote import is a runtime or build-time dependency on that URL staying up.
-
-## Importing the Same Module with Different Aliases
-
-Sometimes you want the *same* module under two names — e.g. a base theme plus a scoped copy. Alias both:
-
-```fscss
-@import((brand as brand-default) from design-system)
-@import((brand as brand-beta) from design-system)
-
-:root { @brand-default() }
-.beta .app { @brand-beta() }
-```
-
-## Good Habits
-
-- **Alias to the role**, not the source: `theme as light-theme`, not `theme as t1`.
-- **Keep aliases short** — you'll repeat the name on every call.
-- **Group by module** — one statement per library, not one per component.
-- **Prefer named imports** over `(*)` when you only need a couple of names.
-
-## Checklist When Something Breaks
-
-1. Did the module actually define that name? (Check `@define` labels.)
-2. Is the alias unique across all imports?
-3. For remotes: is the URL reachable and CORS-friendly?
-
-## Summary
-
-- `(module as alias)` renames an import to avoid clashes.
-- Multiple modules group in one `from (…)` block.
-- Remote imports use a quoted URL.
-- Alias by role, keep it short, prefer selective imports.
+Nothing runs automatically. You must invoke the imported names.
 
 ---
+
+### Syntax forms (v1.1.16+ / recommended 1.2.6+)
+
+```css
+/* 1. Named imports (preferred) */
+@import((flex-x, flex-center) from flex-control)
+
+/* 2. Aliases (rename for this file only) */
+@import((circle-progress as cp, progress-range as pr) from circle-progress)
+
+/* 3. Everything */
+@import((*) from "animations.fscss")
+
+/* 4. Registry libraries (no quotes) */
+@import((*) from st-core@v2)
+@import((*) from form)
+@import((mirror as m) from fscss:micros)
+
+/* 5. Local path (quotes) */
+@import((card, card-body) from "./components/card.fscss")
+
+/* 6. Remote URL (quotes) */
+@import((btn, btn-primary) from "https://cdn.example.com/buttons.fscss")
+```
+
+After importing you **must call** the mixins:
+
+```css
+@form-root()
+@cp(.progress-circle)
+.p75 { @pr(75) }
+
+.container {
+  @flex-center()
+}
+```
+
+---
+
+### Important rules (especially v1.2.6)
+
+- `as` **fully renames** the binding for the current file. The original name becomes undefined here.
+- A file owns the names it imported (including aliases). Downstream files can re-import *those* local names.
+- Prefer selective named imports over `*` (smaller output, clearer intent).
+- Registry names → **no quotes**. Paths and URLs → **quotes**.
+- Older form still works: `@import(exec("file.fscss"))`
+
+---
+
+### Practical examples
+
+**Form module (from previous conversation):**
+```css
+@import((*) from form)
+
+@form-root()
+@form-group(.form-group)
+@form-input(.form-input)
+@form-label(.form-label)
+@form-float(.form-group, .form-input, .form-label)
+/* … etc */
+```
+
+**Progress circle:**
+```css
+@import((
+  circle-progress as cp,
+  progress-range as pr,
+  progress-root as root
+) from circle-progress)
+
+@root()
+@cp(.progress-circle)
+.p85 { @pr(85) }
+```
+
+**Local + alias chain:**
+```css
+/* style.fscss */
+@import((mirror as m) from fscss:micros)
+
+/* app.fscss */
+@import((m as mirr) from "style.fscss")
+@mirr(colors, indices)   /* works */
+/* @m or @mirror → error in this file */
+```
+
+---
+
+### Browser vs production
+
+| Mode       | How imports work                          |
+|------------|-------------------------------------------|
+| Runtime    | `runtime.min.js` resolves registry + URLs |
+| CLI        | `fscss in.fscss out.css` (local + network)|
+| Production | Compile with CLI → ship plain CSS only    |
+
+Official docs:  
+- https://fscss.devtem.org/import  
+- https://fscss.devtem.org/modular-system  
+- Registry: https://fscss.devtem.org/libraries  
 
 **Next: [Numbers and Math](./num-and-math.md)**
