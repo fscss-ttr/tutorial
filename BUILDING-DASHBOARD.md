@@ -602,9 +602,9 @@ html, body {
 3. **Selector-parameterized helpers** (`@ai-shell(.ai-shell)`, `@st-chart-fill(.chart-fill, tokenSeries)`, …) attach rules to *your* class names.
 4. Plain CSS after that is normal layout, overrides, and media queries.
 
-If the CLI cannot resolve registry names offline, use remote URLs instead:
+If the CLI cannot resolve registry names, use remote URLs instead:
 
-```fscss
+```css
 @import((*) from "https://cdn.jsdelivr.net/gh/fscss-ttr/ai-ui.fscss@main/ai-ui.fscss")
 @import((*) from "https://cdn.jsdelivr.net/gh/fscss-ttr/st-core.fscss@main/st-core@v2.fscss")
 @import((*) from "https://cdn.jsdelivr.net/gh/fscss-ttr/FSCSS@main/xf/styles/circle-progress.fscss")
