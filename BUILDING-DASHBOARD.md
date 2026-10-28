@@ -1132,6 +1132,9 @@ This tutorial uses the **CLI path**. Keep a single-file runtime version only for
 
 ---
 
+**[CodePen Preview](https://codepen.io/editor/David-Hux/pen/01a181f1-e94a-7029-9f5f-894ea531b2fc)**
+
+
 ## References
 
 - [ai-ui.fscss](https://github.com/fscss-ttr/ai-ui.fscss) — AI chrome (shell, messages, prompt, usage, workflow)  
