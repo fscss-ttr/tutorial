@@ -13,6 +13,10 @@
 
 FSCSS (Figured Shorthand CSS) is a modern CSS preprocessor that simplifies your styling workflow with an intuitive shorthand syntax. You get variables, reusable blocks, design-token stores, arrays, loops, and conditional logic — without a heavy build pipeline.
 
+### Quick projects: 
+
+- **[BUILDING-DASHBOARD.md](https://github.com/fscss-ttr/tutorial/blob/master/BUILDING-DASHBOARD.md)**
+
 ---
 
 ## Table of Contents
